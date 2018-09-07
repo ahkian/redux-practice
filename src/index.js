@@ -10,7 +10,18 @@ const initState = {
 }
 
 function reducer(state = initState, action){
-  return state
+  let newState
+  switch(action.type){
+    case 'INCREMENT_LEVEL':
+      newState = {...state}
+      newState.count += 1
+      return newState;
+    case 'DECREMENT_LEVEL':
+      newState = {...state}
+      newState.count -= 1
+      return newState;
+    default: return state
+  }
 }
 
 const store = createStore(reducer)
@@ -19,7 +30,7 @@ console.log("store", store, store.getState());
 
 let action = {
   type: "INCREMENT_LEVEL",
-  payload: 
+  payload:
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
