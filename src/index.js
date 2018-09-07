@@ -13,13 +13,9 @@ function reducer(state = initState, action){
   let newState
   switch(action.type){
     case 'INCREMENT_LEVEL':
-      newState = {...state}
-      newState.count += 1
-      return newState;
+      return {...state, count: state.count + 1}
     case 'DECREMENT_LEVEL':
-      newState = {...state}
-      newState.count -= 1
-      return newState;
+      return {...state, count: state.count - 1}
     default: return state
   }
 }
