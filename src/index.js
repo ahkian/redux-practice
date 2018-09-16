@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
 const initState = {
   level: 1
@@ -59,5 +60,5 @@ store.dispatch(action3)
 store.dispatch(action2)
 store.dispatch(action1)
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
