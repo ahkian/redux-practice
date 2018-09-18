@@ -27,20 +27,6 @@ const store = createStore(reducer)
 
 console.log("store", store, store.getState());
 
-let action1 = {
-  type: "INCREMENT_LEVEL",
-  payload:""
-}
-
-let action2 = {
-  type: "DECREMENT_LEVEL",
-  payload:""
-}
-
-let action3 = {
-  type: "SET_LEVEL",
-  payload: 3
-}
 
 const dispatchWithLog = (store) => {
   const rawDispatch = store.dispatch;
@@ -55,10 +41,6 @@ const dispatchWithLog = (store) => {
 }
 
 store.dispatch = dispatchWithLog(store)
-
-store.dispatch(action3)
-store.dispatch(action2)
-store.dispatch(action1)
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
