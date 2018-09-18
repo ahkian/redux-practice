@@ -26,7 +26,7 @@ class App extends Component {
     console.log(this.props);
     return (
       <div className="App">
-        <h1>Level: {this.props.level}</h1>
+        {this.props.level > 0 ? <h1 style={{color: "green"}}>Level: {this.props.level}</h1> : this.props.level === 0 ? <h1>Level: {this.props.level}</h1> : <h1 style={{color: "red"}}>Level: {this.props.level}</h1>}
         <button onClick={this.increment}>Click to Increment Level</button>
         <button onClick={this.decerement}>Click to Decrement Level</button>
         <button onClick={this.reset}>Click to Reset Level</button>
