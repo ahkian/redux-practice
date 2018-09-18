@@ -26,6 +26,7 @@ class App extends Component {
     console.log(this.props);
     return (
       <div className="App">
+        <h1>Level: {this.props.level}</h1>
         <button onClick={this.increment}>Click to Increment Level</button>
         <button onClick={this.decerement}>Click to Decrement Level</button>
         <button onClick={this.reset}>Click to Reset Level</button>
@@ -34,5 +35,9 @@ class App extends Component {
   }
 }
 
-
-export default connect()(App);
+function mapStateToProps(state){
+  return{
+    level: state.level
+  }
+}
+export default connect(mapStateToProps)(App);
