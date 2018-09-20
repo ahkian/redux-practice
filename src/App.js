@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Header, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
+import New from './components/newComponent.js';
 
 class App extends Component {
   increment = () => {
@@ -26,10 +28,11 @@ class App extends Component {
     console.log(this.props);
     return (
       <div className="App">
-        {this.props.level > 0 ? <h1 style={{color: "green"}}>Level: {this.props.level}</h1> : this.props.level === 0 ? <h1>Level: {this.props.level}</h1> : <h1 style={{color: "red"}}>Level: {this.props.level}</h1>}
-        <button onClick={this.increment}>Click to Increment Level</button>
-        <button onClick={this.decerement}>Click to Decrement Level</button>
-        <button onClick={this.reset}>Click to Reset Level</button>
+        {this.props.level > 0 ? <Header as='h1' textAlign='center' style={{color: "green"}}>Level: {this.props.level}</Header> : (this.props.level === 0 ? <Header as='h1' textAlign='center'>Level: {this.props.level}</Header> : <Header as='h1' textAlign='center' style={{color: "red"}}>Level: {this.props.level}</Header>)}
+        <Button id="increment" onClick={this.increment}>Click to Increment Level</Button>
+        <Button id="decrement" onClick={this.decerement}>Click to Decrement Level</Button>
+        <Button id="reset" onClick={this.reset}>Click to Reset Level</Button>
+        <New />
       </div>
     );
   }
