@@ -3,6 +3,7 @@ import './App.css';
 import { Header, Button } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import New from './components/newComponent.js';
+import{INCREMENT_LEVEL, DECREMENT_LEVEL, SET_LEVEL} from './types.js';
 
 class App extends Component {
   increment = () => {

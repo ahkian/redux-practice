@@ -5,14 +5,21 @@ class New extends Component {
   render(){
     console.log("New Props", this.props);
     return(
-      <p>New Here</p>
+      <React.Fragment>
+        <p>New Here</p>
+        <ul>
+          {this.props.level.map(el =>{
+            return <p><p>{el}</p><p>{el + 1}</p></p>
+          })}
+        </ul>
+      </React.Fragment>
     )
   }
 }
 
 function mapStateToProps(state){
   return{
-    level: state.level
+    level: state.level >= 0 ? [...Array(state.level).keys()] : [...Array(state.level * -1).keys()]
   }
 }
 

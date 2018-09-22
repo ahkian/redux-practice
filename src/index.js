@@ -5,6 +5,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import{INCREMENT_LEVEL, DECREMENT_LEVEL, SET_LEVEL} from './types.js';
 
 const initState = {
   level: 1
@@ -12,11 +13,11 @@ const initState = {
 
 function reducer(state = initState, action){
   switch(action.type){
-    case 'INCREMENT_LEVEL':
+    case INCREMENT_LEVEL:
       return {...state, level: state.level + 1}
-    case 'DECREMENT_LEVEL':
+    case DECREMENT_LEVEL:
       return {...state, level: state.level - 1}
-    case 'SET_LEVEL':
+    case SET_LEVEL:
       return {...state, level: action.payload}
     default:
       return state
