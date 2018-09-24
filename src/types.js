@@ -1,0 +1,3 @@
+export const INCREMENT_LEVEL = 'INCREMENT_LEVEL'
+export const DECREMENT_LEVEL = 'DECREMENT_LEVEL'
+export const SET_LEVEL = 'SET_LEVEL'
